@@ -1,0 +1,25 @@
+package org.firstinspires.ftc.teamcode;
+
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.HardwareMap;
+
+import java.util.List;
+
+public class Drivetrain {
+  private final DcMotor frontLeft;
+  private final DcMotor frontRight;
+  private final DcMotor backLeft;
+  private final DcMotor BackRight;
+  private final List<Dcmotor> motors;
+
+  private double factor = 1.0;
+
+  private boolean rotateControls = false;
+
+  public Drivetrain(OpMode opMode) {
+    HardwareMap map = opMode.hardwareMap;
+    frontLeft = map.dcMotor.get("drive/f1");
